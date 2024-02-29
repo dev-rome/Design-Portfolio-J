@@ -8,6 +8,7 @@ import { navLinks } from "@/constants/navLinks";
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { MdMenu } from "react-icons/md";
 import { MdClose } from "react-icons/md";
@@ -15,12 +16,15 @@ import { MdClose } from "react-icons/md";
 import Logo from "../public/assets/images/test-logo.svg";
 
 const ListItem = ({ title, path, onClick }: NavbarProps) => {
+  const router = usePathname();
+  const isActive = router === path;
+
   return (
     <li>
       <Link
         href={path}
         onClick={onClick}
-        className="text-2xl font-bold md:text-base"
+        className={`${isActive ? "text-[#e03131]" : ""} text-2xl font-bold md:text-base`}
       >
         {title}
       </Link>
