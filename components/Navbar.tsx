@@ -17,7 +17,7 @@ import Logo from "../public/assets/images/test-logo.svg";
 const ListItem = ({ title, path }: NavbarProps) => {
   return (
     <li>
-      <Link href={path} className="text-2xl font-bold">
+      <Link href={path} className="text-2xl font-bold md:text-base">
         {title}
       </Link>
     </li>
@@ -32,7 +32,7 @@ const SocialLink = ({ title, path, Icon }: SocialLinkProps) => {
         rel="noopener noreferrer"
         target="_blank"
         aria-label={title}
-        className="text-3xl"
+        className="text-3xl md:text-xl"
       >
         {<Icon />}
       </a>
@@ -48,7 +48,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="col-span-4 flex items-center justify-between p-8 md:col-span-3 md:flex-col md:items-start md:pt-6">
+    <nav className="col-span-4 flex items-center justify-between pt-4 md:col-span-2 md:col-start-1 md:flex-col md:items-start md:justify-start md:p-3 md:pt-6">
       <Link href="/">
         <Image
           src={Logo}
@@ -56,7 +56,7 @@ export default function Navbar() {
           className="h-16 w-16 md:h-20 md:w-20"
         />
       </Link>
-      <p className="my-7 hidden text-lg md:block">
+      <p className="my-7 hidden md:block">
         John <br />
         Murillo
       </p>
