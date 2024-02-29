@@ -77,7 +77,7 @@ export default function Navbar() {
         <MdMenu className="text-3xl" />
       </button>
 
-      <ul className="hidden gap-2 md:flex md:flex-col">
+      <ul className="hidden md:flex md:flex-col">
         {navLinks.map(({ title, path }) => (
           <ListItem key={title} title={title} path={path} />
         ))}
