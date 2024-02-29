@@ -64,7 +64,7 @@ export default function Navbar() {
         />
       </Link>
 
-      <p className="my-7 hidden md:block">
+      <p className="my-7 hidden font-bold md:block">
         John <br />
         Murillo
       </p>
@@ -104,7 +104,13 @@ export default function Navbar() {
 
           <ul className="mt-10 flex justify-center gap-8">
             {socialLinks.map(({ title, path, Icon }) => (
-              <SocialLink key={title} title={title} path={path} Icon={Icon} onClick={handleClose} />
+              <SocialLink
+                key={title}
+                title={title}
+                path={path}
+                Icon={Icon}
+                onClick={handleClose}
+              />
             ))}
           </ul>
         </div>
