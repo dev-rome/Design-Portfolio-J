@@ -14,17 +14,21 @@ import { MdClose } from "react-icons/md";
 
 import Logo from "../public/assets/images/test-logo.svg";
 
-const ListItem = ({ title, path }: NavbarProps) => {
+const ListItem = ({ title, path, onClick }: NavbarProps) => {
   return (
     <li>
-      <Link href={path} className="text-2xl font-bold md:text-base">
+      <Link
+        href={path}
+        onClick={onClick}
+        className="text-2xl font-bold md:text-base"
+      >
         {title}
       </Link>
     </li>
   );
 };
 
-const SocialLink = ({ title, path, Icon }: SocialLinkProps) => {
+const SocialLink = ({ title, path, Icon, onClick }: SocialLinkProps) => {
   return (
     <li>
       <a
@@ -33,6 +37,7 @@ const SocialLink = ({ title, path, Icon }: SocialLinkProps) => {
         target="_blank"
         aria-label={title}
         className="text-3xl md:text-xl"
+        onClick={onClick}
       >
         {<Icon />}
       </a>
@@ -47,15 +52,18 @@ export default function Navbar() {
     setIsOpen((prevIsOpen) => !prevIsOpen);
   };
 
+  const handleClose = () => setIsOpen(false);
+
   return (
-    <nav className="col-span-4 flex items-center justify-between pt-4 md:col-span-2 md:col-start-1 md:flex-col md:items-start md:justify-start md:p-3 md:pt-6">
+    <nav className="col-span-4 flex items-center justify-between md:col-span-2 md:col-start-1 md:flex-col md:items-start md:justify-start">
       <Link href="/">
         <Image
           src={Logo}
           alt="John Design"
-          className="h-16 w-16 md:h-20 md:w-20"
+          className="h-16 w-16 md:h-32 md:w-32"
         />
       </Link>
+
       <p className="my-7 hidden md:block">
         John <br />
         Murillo
@@ -70,6 +78,7 @@ export default function Navbar() {
           <ListItem key={title} title={title} path={path} />
         ))}
       </ul>
+
       <ul className="hidden md:mt-2 md:flex md:gap-4">
         {socialLinks.map(({ title, path, Icon }) => (
           <SocialLink key={title} title={title} path={path} Icon={Icon} />
@@ -81,14 +90,21 @@ export default function Navbar() {
           <button onClick={handleToggle}>
             <MdClose className="ml-auto text-3xl" />
           </button>
+
           <ul className="mt-20 flex flex-col items-center gap-8">
             {navLinks.map(({ title, path }) => (
-              <ListItem key={title} title={title} path={path} />
+              <ListItem
+                key={title}
+                title={title}
+                path={path}
+                onClick={handleClose}
+              />
             ))}
           </ul>
+
           <ul className="mt-10 flex justify-center gap-8">
             {socialLinks.map(({ title, path, Icon }) => (
-              <SocialLink key={title} title={title} path={path} Icon={Icon} />
+              <SocialLink key={title} title={title} path={path} Icon={Icon} onClick={handleClose} />
             ))}
           </ul>
         </div>
