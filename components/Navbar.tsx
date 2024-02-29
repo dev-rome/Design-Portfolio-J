@@ -64,7 +64,7 @@ export default function Navbar() {
         <Image
           src={Logo}
           alt="John Design"
-          className="h-16 w-16 md:h-32 md:w-32"
+          className="h-16 w-16 md:h-24 md:w-24"
         />
       </Link>
 
