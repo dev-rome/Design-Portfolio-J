@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "John Design",
-  description: "John's personal website",
+  title: "John Murillo",
+  description: "John Murillo personal website",
 };
 
 export default function RootLayout({
@@ -18,10 +19,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-[#212529] text-[#f8f9fa]`}>
         <main>
-          <div className="grid grid-cols-4 lg:grid-cols-12 px-4">
-          {children}
+          <div className="mx-auto grid max-w-[1200px] grid-cols-4 px-4 md:grid-cols-12">
+            <Navbar />
+            {children}
           </div>
-          </main>
+        </main>
       </body>
     </html>
   );
