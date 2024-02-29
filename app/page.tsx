@@ -14,7 +14,7 @@ const GalleryItem = ({ src, alt, title, description }: GalleryProps) => {
         height={1000}
         className="h-auto w-full"
       />
-      <div className="xl:p-4 mt-2 absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+      <div className="absolute inset-0 mt-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100 xl:p-4">
         <h2>{title}</h2>
         <p>{description}</p>
       </div>
@@ -24,7 +24,7 @@ const GalleryItem = ({ src, alt, title, description }: GalleryProps) => {
 
 export default function Home() {
   return (
-    <section className="col-span-4 mt-6 md:col-start-3 md:col-end-13">
+    <section className="col-span-4 mt-10 md:col-start-3 md:col-end-13 md:mt-0">
       <div className="grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2">
         {galleryItems.map(({ id, src, alt, title, description }) => (
           <GalleryItem
