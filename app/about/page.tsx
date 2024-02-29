@@ -4,7 +4,7 @@ import PersonalImage from "../../public/assets/images/test-person-img.jpg";
 
 export default function About() {
   return (
-    <section className="py:mt-16 col-span-4 py-10 md:col-start-3 md:col-end-13">
+    <section className="col-span-4 py-10 md:col-start-3 md:col-end-13">
       <div className="flex flex-col items-center text-center">
         <h1 className="text-2xl font-bold md:text-xl">I'm John Murillo</h1>
 
