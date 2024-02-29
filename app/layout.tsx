@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-[#212529] text-[#f8f9fa]`}>
         <main>
-          <div className="mx-auto grid max-w-[1280px] grid-cols-4 px-4 md:grid-cols-12">
+          <div className="mx-auto grid max-w-[1280px] grid-cols-4 px-4 py-10 md:grid-cols-12">
             <Navbar />
             {children}
           </div>
