@@ -14,9 +14,9 @@ const GalleryItem = ({ src, alt, title, description }: GalleryProps) => {
         height={1000}
         className="h-auto w-full"
       />
-      <div className="absolute inset-0 mt-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100 xl:p-4">
-        <h2>{title}</h2>
-        <p>{description}</p>
+      <div className="absolute inset-0 mt-2 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        <h2 className="font-bold xl:text-2xl">{title}</h2>
+        <p className="hidden xl:block">{description}</p>
       </div>
     </div>
   );
