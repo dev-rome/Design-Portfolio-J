@@ -8,3 +8,9 @@ export interface SocialLinkProps {
   path: string;
   Icon: React.ElementType;
 }
+export interface GalleryProps {
+  src: string;
+  alt: string;
+  title: string;
+  description: string;
+}
