@@ -13,5 +13,4 @@ export interface GalleryProps {
   src: string;
   alt: string;
   title: string;
-  description: string;
 }
